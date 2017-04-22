@@ -1,0 +1,16 @@
+{
+  "name": "pub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.1",
+    "aws-sdk": "^2.45.0",
+    "require": "^2.4.20"
+  }
+}
