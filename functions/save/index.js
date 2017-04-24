@@ -14,18 +14,20 @@ admin.initializeApp({
 
 const db = admin.database();
 const ref = db.ref('/');
-const sensorRef = ref.child('test');
+const sensorRef = ref.child('accelerometer');
 
 exports.handle = function(event, context, callback) {
   context.callbackWaitsForEmptyEventLoop = false;
   var newSensorRef = sensorRef.push();
   newSensorRef.set({
-      data: event.data
+      x: event.x,
+      y: event.y,
+      z: event.z
   }, function(error) {
     if (error) {
         callback(error);
     } else {
-      callback(null, { data: event.data });
+        callback(null, { message: 'success' });
     }
   });
 };

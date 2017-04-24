@@ -2,7 +2,7 @@
   "name": "sensor",
   "description": "",
   "memory": 128,
-  "timeout": 3,
+  "timeout": 4,
   "role": "arn:aws:iam::825155371744:role/sensor_lambda_function",
   "environment": {},
   "runtime": "nodejs4.3"
