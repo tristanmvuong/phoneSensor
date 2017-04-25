@@ -25,7 +25,7 @@ exports.handle = function(event, context, callback) {
       z: event.z
   }, function(error) {
     if (error) {
-        callback(error);
+        callback({ message: 'error' });
     } else {
         callback(null, { message: 'success' });
     }
