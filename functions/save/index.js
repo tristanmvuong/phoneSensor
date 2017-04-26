@@ -22,7 +22,8 @@ exports.handle = function(event, context, callback) {
   newSensorRef.set({
       x: event.x,
       y: event.y,
-      z: event.z
+      z: event.z,
+      date: event.date
   }, function(error) {
     if (error) {
         callback({ message: 'error' });
