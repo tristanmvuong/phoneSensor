@@ -14,11 +14,13 @@ admin.initializeApp({
 
 const db = admin.database();
 const ref = db.ref('/');
-const sensorRef = ref.child('test');
+const sensorRef = ref.child('accelerometer');
 
 exports.handle = function(event, context, callback) {
     context.callbackWaitsForEmptyEventLoop = false;
-    sensorRef.once('value', function(data) {
+    var startDate = event.startDate;
+    var endDate = event.endDate;
+    sensorRef.orderByChild("date").startAt(startDate).endAt(endDate).once('value', function(data) {
         callback(null, data.val());
     }, function(error) {
         callback(error);
